@@ -19,11 +19,18 @@ void RCC_Config() {
 B2: Cấu hình ngoại vi
 Sau khi được cấp xung, ta sử dụng hàm GPIO_Init(GPIOx, &GPIO_InitStruct) để cấu hình
 
-Trong đó: GPIOx           : GPIO cần cấu hình
-          GPIO_InitStruct : Biến chứa các thông tin để cấu hình cho GPIO
+Trong đó: 
+
+GPIOx           : GPIO cần cấu hình
+          
+GPIO_InitStruct : Biến chứa các thông tin để cấu hình cho GPIO
+
 GPIO_InitStruct có kiểu dữ liệu là GPIO_InitTypeDef chứa các trường sau:
+
           GPIO_Pin        : Chọn Pin đang cần để cấu hình
+	  
           GPIO_Mode       : Chọn chế độ cho Pin
+	  
           GPIO_Speed      : Chọn tốc độ phản hồi
 
 Nếu cấu hình Pin là đầu vào, ta có thể chọn:
