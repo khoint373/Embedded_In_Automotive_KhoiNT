@@ -468,13 +468,12 @@ ARM Macro Assembler    Page 8
               00000200 
               00000000 
 Command Line: --debug --xref --width=80 --cpu=Cortex-M3 --apcs=interwork --depen
-d=.\startup_stm32f10x_md.d -o.\startup_stm32f10x_md.o -IC:\Users\kh513\OneDrive\
-Desktop\STM32\Lesson1\Assignment1_KhoiNT\Code\RTE -IC:\Users\kh513\OneDrive\Desk
-top\STM32\Lesson1\Assignment1_KhoiNT\Code\RTE\Device\STM32F103C8 -IC:\Keil_v5\AR
-M\PACK\ARM\CMSIS\4.1.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.
-1.0\Device\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeri
-ph_Driver\inc --list=.\startup_stm32f10x_md.lst RTE\Device\STM32F103C8\startup_s
-tm32f10x_md.s
+d=.\startup_stm32f10x_md.d -o.\startup_stm32f10x_md.o -IC:\Users\kh513\Desktop\S
+TM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE -IC:\Users\kh513\Desktop\STM32\Lesson1\
+Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8 -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4
+.1.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
+ -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc --li
+st=.\startup_stm32f10x_md.lst RTE\Device\STM32F103C8\startup_stm32f10x_md.s
 
 
 
