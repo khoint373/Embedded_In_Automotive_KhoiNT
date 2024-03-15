@@ -1,6 +1,6 @@
 # **EMBEDDED IN AUTOMOTIVE**
 
-### **MỤC LỤC**
+## **CONTENTS**
 
 [LESSON 1: GENERAL PURPOSE INPUT OUTPUT](#Lesson1)
 
@@ -8,6 +8,13 @@
 
 [LESSON 3: BASIC COMMUNICATION STANDARDS](#Lesson3)
 
+[LESSON 4: SERIAL PERIPHERAL INTERFACE (SPI)](#Lesson4)
+
+[LESSON 5: INTER-INTEGRATED CIRCUIT (I2C)](#Lesson5)
+
+[LESSON 6: UNIVERSAL SYNCHRONOUS ASYNCHRONOUS RECEIVER TRANSMITTER (USART)](#Lesson6)
+
+----------------------------------------------------------
 <a name="Lesson1"></a>
 ## **LESSON 1: GENERAL PURPOSE INPUT OUTPUT**
 	
@@ -116,11 +123,50 @@ Sau khi thiết lập xong, ngoại vi đã có thể sử dụng, tùy thuộc 
 	+ Thay đổi giá trị của 1 Pin hoặc nhiều Pin trên thanh ghi
 	
 	        void GPIO_Write(GPIO_TypeDef* GPIOx, uint16_t PortVal);
-	
+
+----------------------------------------------------------
 <a name="Lesson2"></a>
 ## **LESSON 2: INTERRUPT & TIMER**	
-	
+
+
+----------------------------------------------------------
 <a name="Lesson3"></a>
-## **LESSON 3: BASIC COMMUNICATION STANDARDS**	
-	
+## **LESSON 3: BASIC COMMUNICATION STANDARDS**
+*Các MCU trao đổi dữ liệu với nhau như thế nào ?*
+
+Để có thể giao tiếp được 2 hoặc nhiều MCU với nhau, chúng ta cần có các giao thức để có thể liên lạc với nhau. Cũng giống việc chúng ta giao tiếp bằng ngôn ngữ, các MCU giao tiếp với nhau thông qua điện áp đi qua các chân đã được cấu hình. Ở phạm vi cơ bản này, chúng ta sẽ tìm hiểu về 3 chuẩn giao tiếp cơ bản và phổ biến là SPI, I2C và UART để nắm được cách hoạt động.
+
+### 1. Serial peripheral interface (SPI)
+*SPI là gì? Các chân tín hiệu ra sao ?*
+
+- Là một chuẩn truyền thông nối tiếp đồng bộ
+- Chế độ song công toàn phần, sử dụng mô hình Master-Slave. Trong đó Master sẽ khởi tạo frame cho việc gửi hoặc nhận.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/SPI_single_slave.svg/1024px-SPI_single_slave.svg.png">
+
+Bus SPI sử dụng 4 chân logic tín hiệu:
+	SCLK (Serial Clock)       : Xung Clock phát ra từ Master
+ 	MOSI (Master Out Slave In): Dành cho việc truyền dữ liệu từ Master tới Slave
+  	MISO (Master In Slave Out): Dành cho việc truyền dữ liệu từ Slave tới Master
+   	CS/SS (Chip/Slave Select) : Chân CS được Master sử dụng để chọn Slave cần giao tiếp
+
+*Vậy cách thức hoạt động SPI như thế nào ?*
+
+
+### 2. Inter-Integrated Circuit (I2C)
+
+### 3. Universal synchronous asynchronous receiver transmitter (USART)
+
+
+----------------------------------------------------------
+<a name="Lesson4"></a>
+## **LESSON 4: SERIAL PERIPHERAL INTERFACE (SPI)**
+
+----------------------------------------------------------
+<a name="Lesson5"></a>
+## **LESSON 5: INTER-INTEGRATED CIRCUIT (I2C)**
+
+----------------------------------------------------------
+<a name="Lesson6"></a>
+## **LESSON 6: UNIVERSAL SYNCHRONOUS ASYNCHRONOUS RECEIVER TRANSMITTER (USART)**
 	
