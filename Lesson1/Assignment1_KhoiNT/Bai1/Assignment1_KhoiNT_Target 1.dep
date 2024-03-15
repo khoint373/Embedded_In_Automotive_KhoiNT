@@ -1,64 +1,0 @@
-Dependencies for Project 'Assignment1_KhoiNT', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x65EF16B3)(--c99 -c --cpu Cortex-M3 -g -W -O1 --apcs=interwork -I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE-I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F10X_MD-o .\main.o --omf_browse .\main.crf --depend .\main.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include\stm32f10x.h)(0x53BA1B70)
-I (C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\RTE_Components.h)(0x65EB3EBE)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm3.h)(0x538434D6)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53464854)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302B0E0)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302B0E0)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include\system_stm32f10x.h)(0x4F1E3C4C)
-I (C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\misc.h)(0x53B67022)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\src\misc.c)(0x53B67022)(--c99 -c --cpu Cortex-M3 -g -W -O1 --apcs=interwork -I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE-I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F10X_MD-o .\misc.o --omf_browse .\misc.crf --depend .\misc.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\misc.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include\stm32f10x.h)(0x53BA1B70)
-I (C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\RTE_Components.h)(0x65EB3EBE)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm3.h)(0x538434D6)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53464854)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302B0E0)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302B0E0)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include\system_stm32f10x.h)(0x4F1E3C4C)
-I (C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x53B67022)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\src\stm32f10x_gpio.c)(0x53B67022)(--c99 -c --cpu Cortex-M3 -g -W -O1 --apcs=interwork -I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE-I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F10X_MD-o .\stm32f10x_gpio.o --omf_browse .\stm32f10x_gpio.crf --depend .\stm32f10x_gpio.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include\stm32f10x.h)(0x53BA1B70)
-I (C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\RTE_Components.h)(0x65EB3EBE)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm3.h)(0x538434D6)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53464854)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302B0E0)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302B0E0)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include\system_stm32f10x.h)(0x4F1E3C4C)
-I (C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\misc.h)(0x53B67022)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\src\stm32f10x_rcc.c)(0x53B67022)(--c99 -c --cpu Cortex-M3 -g -W -O1 --apcs=interwork -I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE-I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F10X_MD-o .\stm32f10x_rcc.o --omf_browse .\stm32f10x_rcc.crf --depend .\stm32f10x_rcc.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include\stm32f10x.h)(0x53BA1B70)
-I (C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\RTE_Components.h)(0x65EB3EBE)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm3.h)(0x538434D6)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53464854)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302B0E0)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302B0E0)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include\system_stm32f10x.h)(0x4F1E3C4C)
-I (C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\misc.h)(0x53B67022)
-F (RTE\Device\STM32F103C8\RTE_Device.h)(0x52432688)()
-F (RTE\Device\STM32F103C8\startup_stm32f10x_md.s)(0x4F1E3C4C)(--cpu Cortex-M3 -g --apcs=interwork -I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE-I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc--list .\startup_stm32f10x_md.lst --xref --width 80 -o .\startup_stm32f10x_md.o --depend .\startup_stm32f10x_md.d)
-F (RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x53B67022)()
-F (RTE\Device\STM32F103C8\system_stm32f10x.c)(0x4F1E3C4C)(--c99 -c --cpu Cortex-M3 -g -W -O1 --apcs=interwork -I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE-I C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F10X_MD-o .\system_stm32f10x.o --omf_browse .\system_stm32f10x.crf --depend .\system_stm32f10x.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include\stm32f10x.h)(0x53BA1B70)
-I (C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\RTE_Components.h)(0x65EB3EBE)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm3.h)(0x538434D6)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53464854)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h)(0x5302B0E0)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h)(0x5302B0E0)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include\system_stm32f10x.h)(0x4F1E3C4C)
-I (C:\Users\kh513\Desktop\STM32\Lesson1\Assignment1_KhoiNT\Bai1\RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x53B67022)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\StdPeriph_Driver\inc\misc.h)(0x53B67022)
