@@ -63,8 +63,8 @@ Sau khi ngoại vi được cấp clock, chúng ta có thể thiết lập các 
   
 	Nếu cấu hình Pin là đầu ra, ta thường sử dụng:
 
-	        Output Push Pull  : Cho phép tùy chỉnh tín hiệu ở 2 mức logic 0 (0V) và 1 (3,3V)'
-		    Output Open Drain : Thiếp lập đấu ra có tín hiệu 0V và thả nổi 0-3,3V (đoạn này chưa rõ lắm)'
+	        Output Push Pull  : Cho phép tùy chỉnh tín hiệu ở 2 mức logic 0 (0V) và 1 (3,3V)
+		    Output Open Drain : Thiếp lập đấu ra có tín hiệu 0V và thả nổi 0-3,3V
 	
 	Ví dụ: Chúng ta cần cấu hình cho led PC13 và nút bấm PC15
 
