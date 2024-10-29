@@ -285,13 +285,116 @@ Quá trình truyền dữ liệu UART sẽ bắt đầu bằng Start bit, đư�
 
 ----------------------------------------------------------
 <a name="Lesson4"></a>
-## **LESSON 4: SERIAL PERIPHERAL INTERFACE (SPI)**
+## **LESSON 4: DIRECT MEMORY ACCESS (DMA)**
 
 ----------------------------------------------------------
 <a name="Lesson5"></a>
-## **LESSON 5: INTER-INTEGRATED CIRCUIT (I2C)**
+## **LESSON 5: ANALOG TO DIGITAL CONVERTER (ADC)**
+*ADC là gì? Định nghĩa về ADC?*
+Vi điều khiển hay các thiết bị ngày nay đều sử dụng tín hiệu số dựa trên các bit nhị phân để hoạt động. Còn thực tế thì không chỉ mãi là tín hiệu số mà là tín hiệu tương tự và liên tục vì vậy cần phải có thiết bị chuyển đổi từ tín hiệu tương tự sang tín hiệu số.
+*ADC - Analog to Digital Convert*: là 1 mạch điện tử lấy điện áp tương tự làm đầu vào và chuyển đổi nó thành dữ liệu số (1 giá trị đại diện cho mức điện áp trong mã nhị phân).
+<img src = 'https://imgur.com/a/9PXW264'>
+Khả năng chuyển đổi của ADC phụ thuộc vào 2 yếu tố:
+- Độ phân giải: Số bit mà ADC sử dụng để mã hóa tín hiệu. Hay còn gọi là số mức tín hiệu được biểu diễn(có độ phân giải càng cao thì độ chính xác càng lớn).
+- Tần số/Chu kì lấy mẫu: tốc độ/khoảng thời gian giữa 2 lần mã hóa(tần số lấy mẫu càng cao thì chuyển đổi sẽ có độ chính xác càng lớn).
+ 	- Tần số lấy mẫu = 1/(thời gian lấy mẫu + thời gian chuyển đổi).
+  	- Tần số lấy mẫu phải lớn hơn tần số của tín hiệu ít nhất 2 lần để đảm bảo độ chính xác khi khôi phục lại tín hiệu.
+
+*Vậy ADC ở trong STM32F1 được cấu hình như thế nào?*
+Trong STM32 có 2 kênh ADC đó là ADC1 và ADC2, mỗi bộ có tối đa 9 channel với nhiều mode hoạt động, kết quả chuyển đổi được lưu trong thanh ghi 16 bit.
+- Độ phân giải: 12 bit
+- Có các ngắt hỗ trợ, có thể điều khiển hoạt động ADC bằng xung Trigger
+- Thời gian chuyển đổi nhanh: 1us tại tần số 65MHz
+- Có bộ DMA giúp tăng tốc độ xử lý
+
+Sơ đồ khối bộ ADC
+<img src= 'https://imgur.com/a/clOrXqe'>
+
+ **Cấu hình ADC**
+Các bộ ADC được cấp xung từ RCC APB2, để bộ ADC hoạt động cần cấp xung cho cả ADC để tạo tần số lấy mẫu tín hiệu và cấp xung cho GPIO của PORT ngõ vào.
+ <img src = 'https://imgur.com/a/J8XR7fe'>
+
+```
+void RCC_Config(){
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA| RCC_APB2Periph_ADC1|RCC_APB2Periph_AFIO, ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+	}
+```
+ADC hỗ trợ rất nhiều kênh, mỗi kênh lấy tín hiệu từ các chân GPIO của các Port và từ các chân khác. Các chân GPIO dùng làm ngõ vào cho ADC sẽ được cấu hình Mode AIN.(Analogue Input).
+<img src = 'https://imgur.com/a/uV2PeLH'>
+```
+void GPIO_Config(){
+	GPIO_InitTypeDef GPIO_InitStruct;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AIN;
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_0;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOA, &GPIO_InitStruct);
+	}
+```
+
+**Các chế độ của ADC**
+ Regular Conversion:
+- Single: ADC chỉ đọc 1 kênh duy nhất, và chỉ đọc khi kênh nào được yêu cầu.
+- Single Continous: sẽ đọc 1 kênh duy nhất, nhưng đọc dữ liệu nhiều lần.
+- Scan: Multi-Channels: Quét qua và đọc dữ liệu nhiều kênh, nhưng chỉ đọc khi nào được yêu cầu.
+- Scan: Continous Multi-Channels Repeat: Quét qua và đọc dữ liệu nhiều kênh, nhưng đọc liên tiếp nhiều lần giống như Single Continous.
+Injected Conversion:
+Trong trường hợp nhiều kênh hoạt động. Khi kênh có mức độ ưu tiên cao hơn có thể tạo ra một Injected Trigger. Khi gặp Injected Trigger thì ngay lập tức kênh đang hoạt động bị ngưng lại để kênh được ưu tiên kia có thể hoạt động.
+
+**Các tham số của ADC**
+- ADC_Mode:  Cấu hình chế độ hoạt động cho ADC là đơn (Independent) hay đa, ngoài ra còn có các chế độ ADC chuyển đổi tuần tự các kênh (regularly) hay chuyển đổi khi có kích hoạt (injected).
+- ADC_NbrOfChannel: Số kênh ADC để cấu hình
+- ADC_ContinuousConvMode: Cấu hình bộ ADC có chuyển đổi liên tục hay không, Enable để cấu hình ADC  chuyển đổi lien tục, nếu cấu hình Disable, ta phải gọi lại lệnh đọc ADC để bắt đầu quá trình chuyển đổi.
+- ADC_ExternalTrigConv: Enable để sử dụng tín hiệu trigger.
+- ADC_ScanConvMode: Cấu hình chế độ quét ADC lần lượt từng kênh. Enable nếu sử dụng chế độ quét này.
+- ADC_DataAlign: Cấu hình căn lề cho data. Vì bộ ADC xuất ra giá trị 12bit, được lưu vào biến 16 hoặc 32 bit nên phải căn lề các bit về trái hoặc phải.
+
+Ngoài các tham số trên, cần cấu hình thêm thời gian lấy mẫu, thứ tự kênh ADC khi quét
+	``` ADC_RegularChannelConfig(ADC_TypeDef* ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime); ```
+	- Rank: Ưu tiên của kênh ADC
+ 	- Sample Time: Thời gian lấy mẫu tín hiệu
+- Hàm bắt đầu quá trình chuyển đổi:
+	``` ADC_SoftwareStartConvCmd(ADC_TypeDef* ADCx, FunctionalState NewState); ```
+- Hàm đọc giá trị chuyển đổi được ở các kênh ADC tuần tự
+	``` ADC_GetConversionValue(ADC_TypeDef* ADCx); ```
+- Hàm trả về giá trị chuyển đổi cuối cùng của ADC1, ADC2 ở chế độ kép
+	``` ADC_GetDualModeConversionValue(void); ```
+**Hàm cấu hình ADC đầy đủ**
+```
+void ADC_Config(){
+	ADC_InitTypeDef ADC_InitStruct;
+	
+	ADC_InitStruct.ADC_Mode = ADC_Mode_Independent;
+	ADC_InitStruct.ADC_NbrOfChannel = 1;
+	ADC_InitStruct.ADC_ScanConvMode = DISABLE;
+	ADC_InitStruct.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
+	ADC_InitStruct.ADC_ContinuousConvMode = ENABLE;
+	ADC_InitStruct.ADC_DataAlign = ADC_DataAlign_Right;
+	
+	ADC_Init(ADC1, &ADC_InitStruct);
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_55Cycles5);
+	ADC_Cmd(ADC1, ENABLE);
+	ADC_SoftwareStartConvCmd(ADC1, ENABLE);
+	}
+```
+
+Ví dụ: Dùng cách tính trung bình mỗi 10 lần đọc để tính điện áp chân PA0 sau mỗi giây.
+Lời giải:
+```
+while(1){
+		for(int i=0; i<10; i++){
+			val = ADC_GetConversionValue(ADC1);
+			delay_us(100);
+			sum+=val;
+		}
+		sum = sum/10;
+		Delay_Ms(100);
+sum=0;
+	}
+```
+ Tuy nhiên, giá trị đo được trên ADC có thể bị nhiễu, vọt lố do nhiều lý do khách quan về phần cứng. Phương pháp trung bình không thể giảm thiểu các giá trị này. Do đó không thực tế để ứng dụng. Để giải quyết vấn đề này, chúng ta sử dụng **thuật toán lọc Kalman**.
 
 ----------------------------------------------------------
 <a name="Lesson6"></a>
-## **LESSON 6: UNIVERSAL SYNCHRONOUS ASYNCHRONOUS RECEIVER TRANSMITTER (USART)**
+## **LESSON 6: CONTROLLER AREA NETWORK (CAN)**
 	
